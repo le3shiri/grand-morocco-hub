@@ -13,7 +13,14 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+        rajdhani: ['Rajdhani', 'sans-serif'],
+      },
       colors: {
+        'neon-cyan': 'hsl(var(--neon-cyan))',
+        'neon-purple': 'hsl(var(--neon-purple))',
+        'neon-pink': 'hsl(var(--neon-pink))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

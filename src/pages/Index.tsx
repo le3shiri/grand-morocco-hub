@@ -75,12 +75,12 @@ const Index = () => {
         
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <div className="mb-8 inline-block">
-            <div className="px-6 py-2 bg-gradient-to-r from-neon-purple/20 to-neon-cyan/20 border border-neon-purple/50 rounded-full backdrop-blur-sm">
-              <p className="font-rajdhani text-sm tracking-widest text-neon-cyan">🎮 GTA MOROCCO OFFICIAL SERVER</p>
+            <div className="px-6 py-2 bg-gradient-to-r from-royal-gold/20 to-amber-glow/20 border border-royal-gold/50 rounded-full backdrop-blur-sm">
+              <p className="font-rajdhani text-sm tracking-widest text-royal-gold">🎮 GTA MOROCCO OFFICIAL SERVER</p>
             </div>
           </div>
           
-          <h1 className="font-orbitron font-black text-7xl md:text-9xl mb-6 bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-purple bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(139,92,246,0.5)]">
+          <h1 className="font-orbitron font-black text-7xl md:text-9xl mb-6 bg-gradient-to-r from-royal-gold via-amber-glow to-royal-gold bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(212,175,55,0.6)]">
             NUPSIA
           </h1>
           
@@ -95,7 +95,7 @@ const Index = () => {
             <Button 
               onClick={() => navigate("/catalogue")}
               size="lg"
-              className="font-rajdhani font-bold text-lg px-8 py-6 bg-gradient-to-r from-neon-purple to-neon-cyan hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_30px_rgba(139,92,246,0.5)]"
+              className="font-rajdhani font-bold text-lg px-8 py-6 bg-gradient-to-r from-royal-gold to-amber-glow text-background hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.6)]"
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
               BROWSE CATALOGUE
@@ -108,24 +108,24 @@ const Index = () => {
       <section className="py-20 px-4 bg-card/30">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-xl bg-gradient-to-b from-neon-purple/10 to-transparent border border-neon-purple/20 hover:border-neon-purple/50 transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-cyan flex items-center justify-center">
+            <div className="text-center p-8 rounded-xl bg-gradient-to-b from-royal-gold/10 to-transparent border border-royal-gold/20 hover:border-royal-gold/50 transition-all">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-royal-gold to-amber-glow flex items-center justify-center">
                 <Shield className="w-8 h-8 text-background" />
               </div>
               <h3 className="font-orbitron font-bold text-xl mb-2">Secure Trading</h3>
               <p className="font-rajdhani text-muted-foreground">Safe and instant delivery via Discord ticket system</p>
             </div>
             
-            <div className="text-center p-8 rounded-xl bg-gradient-to-b from-neon-cyan/10 to-transparent border border-neon-cyan/20 hover:border-neon-cyan/50 transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple flex items-center justify-center">
-                <Star className="w-8 h-8 text-background" />
+            <div className="text-center p-8 rounded-xl bg-gradient-to-b from-deep-burgundy/10 to-transparent border border-deep-burgundy/20 hover:border-deep-burgundy/50 transition-all">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-deep-burgundy to-royal-gold flex items-center justify-center">
+                <Star className="w-8 h-8 text-foreground" />
               </div>
               <h3 className="font-orbitron font-bold text-xl mb-2">Premium Quality</h3>
               <p className="font-rajdhani text-muted-foreground">Handpicked vehicles and weapons collection</p>
             </div>
             
-            <div className="text-center p-8 rounded-xl bg-gradient-to-b from-neon-purple/10 to-transparent border border-neon-purple/20 hover:border-neon-purple/50 transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-cyan flex items-center justify-center">
+            <div className="text-center p-8 rounded-xl bg-gradient-to-b from-royal-gold/10 to-transparent border border-royal-gold/20 hover:border-royal-gold/50 transition-all">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-glow to-royal-gold flex items-center justify-center">
                 <Zap className="w-8 h-8 text-background" />
               </div>
               <h3 className="font-orbitron font-bold text-xl mb-2">Instant Access</h3>
@@ -139,10 +139,10 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-4 bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-purple bg-clip-text text-transparent">
+            <h2 className="font-orbitron font-bold text-5xl md:text-6xl mb-4 bg-gradient-to-r from-royal-gold via-amber-glow to-royal-gold bg-clip-text text-transparent">
               FEATURED COLLECTION
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-neon-purple to-neon-cyan mx-auto mb-4"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-royal-gold to-amber-glow mx-auto mb-4"></div>
             <p className="font-rajdhani text-xl text-muted-foreground">
               Exclusive items you won't find anywhere else
             </p>
@@ -172,7 +172,7 @@ const Index = () => {
             <Button 
               onClick={() => navigate("/catalogue")}
               size="lg"
-              className="font-rajdhani font-bold text-lg px-10 py-6 bg-gradient-to-r from-neon-purple to-neon-cyan hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_30px_rgba(139,92,246,0.5)]"
+              className="font-rajdhani font-bold text-lg px-10 py-6 bg-gradient-to-r from-royal-gold to-amber-glow text-background hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.6)]"
             >
               VIEW ALL PRODUCTS
             </Button>
@@ -183,7 +183,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-4 border-t border-border bg-card/30">
         <div className="container mx-auto text-center">
-          <h3 className="font-orbitron font-black text-3xl mb-4 bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
+          <h3 className="font-orbitron font-black text-3xl mb-4 bg-gradient-to-r from-royal-gold to-amber-glow bg-clip-text text-transparent">
             NUPSIA
           </h3>
           <p className="font-rajdhani text-muted-foreground mb-4">

@@ -25,7 +25,7 @@ export const ProductCard = ({
   onBuy,
 }: ProductCardProps) => {
   return (
-    <Card className="group overflow-hidden bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-sm border-border hover:border-neon-cyan/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] hover:-translate-y-2">
+    <Card className="group overflow-hidden bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-sm border-border hover:border-royal-gold/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:-translate-y-2">
       <Link to={`/product/${id}`}>
         <div className="aspect-video overflow-hidden bg-muted relative">
           {imageUrl ? (
@@ -45,7 +45,7 @@ export const ProductCard = ({
 
       <div className="p-6 space-y-4">
         <Link to={`/product/${id}`}>
-          <h3 className="font-orbitron font-bold text-xl text-foreground group-hover:text-neon-cyan transition-colors">
+          <h3 className="font-orbitron font-bold text-xl text-foreground group-hover:text-royal-gold transition-colors">
             {name}
           </h3>
         </Link>
@@ -57,13 +57,13 @@ export const ProductCard = ({
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <p className="text-xs text-muted-foreground font-rajdhani mb-1">MODEL</p>
-            <div className="px-3 py-1 bg-neon-purple/20 border border-neon-purple/50 rounded-full inline-block">
-              <p className="font-rajdhani font-bold text-sm text-neon-purple">{model}</p>
+            <div className="px-3 py-1 bg-royal-gold/20 border border-royal-gold/50 rounded-full inline-block">
+              <p className="font-rajdhani font-bold text-sm text-royal-gold">{model}</p>
             </div>
           </div>
           <div className="text-right">
             <p className="text-xs text-muted-foreground font-rajdhani mb-1">PRICE</p>
-            <p className="font-orbitron font-black text-3xl bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
+            <p className="font-orbitron font-black text-3xl bg-gradient-to-r from-royal-gold to-amber-glow bg-clip-text text-transparent">
               ${price.toLocaleString()}
             </p>
           </div>
@@ -72,7 +72,7 @@ export const ProductCard = ({
         <div className="flex gap-2 pt-2">
           <Button
             onClick={onBuy}
-            className="flex-1 font-rajdhani font-bold bg-gradient-to-r from-neon-purple to-neon-cyan hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_20px_rgba(139,92,246,0.4)]"
+            className="flex-1 font-rajdhani font-bold bg-gradient-to-r from-royal-gold to-amber-glow text-background hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.5)]"
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             BUY NOW
@@ -82,7 +82,7 @@ export const ProductCard = ({
               variant="outline"
               size="icon"
               onClick={() => window.open(youtubeLink, "_blank")}
-              className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10 transition-all"
+              className="border-royal-gold text-royal-gold hover:bg-royal-gold/10 transition-all"
             >
               <Youtube className="w-5 h-5" />
             </Button>

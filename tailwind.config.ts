@@ -18,9 +18,9 @@ export default {
         rajdhani: ['Rajdhani', 'sans-serif'],
       },
       colors: {
-        'neon-cyan': 'hsl(var(--neon-cyan))',
-        'neon-purple': 'hsl(var(--neon-purple))',
-        'neon-pink': 'hsl(var(--neon-pink))',
+        "royal-gold": "hsl(var(--royal-gold))",
+        "deep-burgundy": "hsl(var(--deep-burgundy))",
+        "amber-glow": "hsl(var(--amber-glow))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

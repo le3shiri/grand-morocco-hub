@@ -8,69 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 8% 6%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 5%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 5% 12%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 180 100% 50%;
-    --accent-foreground: 240 10% 3.9%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5% 15%;
-    --input: 240 5% 15%;
-    --ring: 263 70% 50%;
+    --background: 0 0% 7%;
+    --foreground: 43 100% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 43 100% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 43 100% 95%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 63% 31%;
+    --secondary-foreground: 43 100% 95%;
+    --muted: 30 20% 25%;
+    --muted-foreground: 43 40% 70%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 40%;
+    --destructive-foreground: 43 100% 95%;
+    --border: 30 30% 20%;
+    --input: 30 30% 20%;
+    --ring: 43 96% 56%;
 
     --radius: 0.75rem;
     
-    /* Custom GTA-style tokens */
-    --neon-cyan: 180 100% 50%;
-    --neon-purple: 263 70% 50%;
-    --neon-pink: 330 100% 71%;
-    --dark-bg: 240 10% 3.9%;
-    --card-bg: 240 8% 6%;
+    /* Royal Gold & Burgundy Colors */
+    --royal-gold: 43 96% 56%;
+    --deep-burgundy: 0 63% 31%;
+    --amber-glow: 38 92% 50%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%) 0%, hsl(180 100% 50%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(240 10% 3.9%) 0%, hsl(240 8% 8%) 50%, hsl(240 10% 3.9%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(240 8% 6%) 0%, hsl(240 8% 4%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(38 92% 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 7%) 0%, hsl(0 0% 10%) 50%, hsl(0 0% 7%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 8%) 100%);
     
     /* Shadows */
-    --shadow-neon: 0 0 20px hsl(263 70% 50% / 0.5);
-    --shadow-card: 0 8px 32px hsl(240 10% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.3);
-
-    --radius: 0.75rem;
+    --shadow-gold: 0 0 20px hsl(43 96% 56% / 0.5);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(43 96% 56% / 0.4);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 

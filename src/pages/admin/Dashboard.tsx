@@ -29,20 +29,19 @@ const Dashboard = () => {
         return;
       }
 
-      const { data: profile } = await supabase
-        .from("profiles")
+      const { data: userRoles } = await supabase
+        .from("user_roles")
         .select("role")
-        .eq("id", session.user.id)
-        .single();
+        .eq("user_id", session.user.id);
 
-      if (profile?.role !== "admin") {
+      const isAdmin = userRoles?.some(r => r.role === 'admin');
+      if (!isAdmin) {
         navigate("/");
         return;
       }
 
       await loadStats();
     } catch (error) {
-      console.error("Error checking admin:", error);
       navigate("/");
     }
   };
@@ -63,7 +62,7 @@ const Dashboard = () => {
         orders: ordersRes.count || 0,
       });
     } catch (error) {
-      console.error("Error loading stats:", error);
+      // Error handled silently
     } finally {
       setLoading(false);
     }

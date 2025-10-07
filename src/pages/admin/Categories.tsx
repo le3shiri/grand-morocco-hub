@@ -36,13 +36,13 @@ const Categories = () => {
       return;
     }
 
-    const { data: profile } = await supabase
-      .from("profiles")
+    const { data: userRoles } = await supabase
+      .from("user_roles")
       .select("role")
-      .eq("id", session.user.id)
-      .single();
+      .eq("user_id", session.user.id);
 
-    if (profile?.role !== "admin") {
+    const isAdmin = userRoles?.some(r => r.role === 'admin');
+    if (!isAdmin) {
       navigate("/");
       return;
     }

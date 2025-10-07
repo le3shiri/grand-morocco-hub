@@ -33,7 +33,6 @@ const Catalogue = () => {
       setProducts(productsRes.data || []);
       setCategories(categoriesRes.data || []);
     } catch (error: any) {
-      console.error("Error loading data:", error);
       toast.error("Failed to load products");
     } finally {
       setLoading(false);
@@ -56,10 +55,9 @@ const Catalogue = () => {
 
       if (error) throw error;
 
-      toast.success("Purchase request sent! Check Discord for your ticket.");
+      toast.success("Purchase request saved! An admin will contact you soon.");
     } catch (error: any) {
       toast.error("Failed to process purchase");
-      console.error(error);
     }
   };
 

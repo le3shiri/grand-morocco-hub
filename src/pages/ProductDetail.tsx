@@ -38,7 +38,6 @@ const ProductDetail = () => {
         setCategory(categoryData);
       }
     } catch (error: any) {
-      console.error("Error loading product:", error);
       toast.error("Product not found");
       navigate("/catalogue");
     } finally {
@@ -61,11 +60,9 @@ const ProductDetail = () => {
         .insert({ user_id: session.user.id, product_id: id });
 
       if (error) throw error;
-
-      toast.success("Purchase request sent! Check Discord for your ticket.");
+      toast.success("Purchase request saved! An admin will contact you soon.");
     } catch (error: any) {
       toast.error("Failed to process purchase");
-      console.error(error);
     }
   };
 

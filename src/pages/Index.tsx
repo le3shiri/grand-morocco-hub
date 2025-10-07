@@ -50,10 +50,9 @@ const Index = () => {
 
       if (error) throw error;
 
-      toast.success("Purchase request sent! Check Discord for your ticket.");
+      toast.success("Purchase request saved! An admin will contact you soon.");
     } catch (error: any) {
       toast.error("Failed to process purchase");
-      console.error(error);
     }
   };
 

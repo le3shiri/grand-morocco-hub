@@ -25,16 +25,20 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (session?.user) {
-      supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", session.user.id)
-        .single()
-        .then(({ data }) => setProfile(data));
-    } else {
-      setProfile(null);
-    }
+    const loadProfile = async () => {
+      if (session?.user) {
+        const { data: userRoles } = await supabase
+          .from("user_roles")
+          .select("role")
+          .eq("user_id", session.user.id);
+        
+        const isAdmin = userRoles?.some(r => r.role === 'admin');
+        setProfile({ role: isAdmin ? 'admin' : 'player' });
+      } else {
+        setProfile(null);
+      }
+    };
+    loadProfile();
   }, [session]);
 
   const handleLogout = async () => {

@@ -17,8 +17,9 @@ const Orders = () => {
   const checkAdmin = async () => {
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) { navigate("/auth"); return; }
-    const { data: profile } = await supabase.from("profiles").select("role").eq("id", session.user.id).single();
-    if (profile?.role !== "admin") { navigate("/"); return; }
+    const { data: userRoles } = await supabase.from("user_roles").select("role").eq("user_id", session.user.id);
+    const isAdmin = userRoles?.some(r => r.role === 'admin');
+    if (!isAdmin) { navigate("/"); return; }
     await loadOrders();
   };
 
@@ -28,7 +29,7 @@ const Orders = () => {
       if (error) throw error;
       setOrders(data || []);
     } catch (error: any) {
-      console.error("Error:", error);
+      // Error handled silently
     } finally {
       setLoading(false);
     }

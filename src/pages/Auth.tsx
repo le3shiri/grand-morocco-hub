@@ -7,6 +7,25 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { z } from "zod";
+
+const loginSchema = z.object({
+  email: z.string().email("Invalid email address").max(255),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+});
+
+const signupSchema = z.object({
+  email: z.string().email("Invalid email address").max(255),
+  username: z.string()
+    .min(3, "Username must be at least 3 characters")
+    .max(50, "Username too long")
+    .regex(/^[a-zA-Z0-9_-]+$/, "Username can only contain letters, numbers, _ and -"),
+  password: z.string()
+    .min(8, "Password must be at least 8 characters")
+    .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+    .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+    .regex(/[0-9]/, "Password must contain at least one number"),
+});
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -26,20 +45,26 @@ const Auth = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
+    
     try {
+      const validated = loginSchema.parse({ email, password });
+      setLoading(true);
+
       const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+        email: validated.email,
+        password: validated.password,
       });
 
-      if (error) throw error;
-
-      toast.success("Logged in successfully!");
-      navigate("/");
-    } catch (error: any) {
-      toast.error(error.message || "Failed to login");
+      if (error) {
+        toast.error(error.message);
+      } else {
+        toast.success("Logged in successfully!");
+        navigate("/");
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast.error(error.errors[0].message);
+      }
     } finally {
       setLoading(false);
     }
@@ -47,26 +72,30 @@ const Auth = () => {
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
+    
     try {
+      const validated = signupSchema.parse({ email, username, password });
+      setLoading(true);
+
       const { error } = await supabase.auth.signUp({
-        email,
-        password,
+        email: validated.email,
+        password: validated.password,
         options: {
-          data: { username },
+          data: { username: validated.username },
           emailRedirectTo: `${window.location.origin}/`,
         },
       });
 
-      if (error) throw error;
-
-      toast.success("Account created! You can now login.");
-      setEmail("");
-      setPassword("");
-      setUsername("");
-    } catch (error: any) {
-      toast.error(error.message || "Failed to create account");
+      if (error) {
+        toast.error(error.message);
+      } else {
+        toast.success("Account created! Check your email to confirm.");
+        navigate("/");
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast.error(error.errors[0].message);
+      }
     } finally {
       setLoading(false);
     }

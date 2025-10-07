@@ -25,8 +25,20 @@ const Profile = () => {
         return;
       }
 
-      const [profileRes, ordersRes] = await Promise.all([
-        supabase.from("profiles").select("*").eq("id", session.user.id).single(),
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("username")
+        .eq("id", session.user.id)
+        .single();
+
+      const { data: userRoles } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", session.user.id);
+
+      const role = userRoles?.find(r => r.role === 'admin') ? 'admin' : 'player';
+      
+      const [ordersRes] = await Promise.all([
         supabase
           .from("orders")
           .select("*, products(*)")
@@ -34,10 +46,10 @@ const Profile = () => {
           .order("created_at", { ascending: false }),
       ]);
 
-      if (profileRes.data) setProfile(profileRes.data);
+      if (profile) setProfile({ ...profile, role });
       if (ordersRes.data) setOrders(ordersRes.data);
     } catch (error: any) {
-      console.error("Error loading profile:", error);
+      // Error handled silently
     } finally {
       setLoading(false);
     }
